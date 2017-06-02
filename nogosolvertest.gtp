@@ -1,0 +1,28 @@
+#make sure time out works
+boardsize 10
+clear_board
+10 solve
+#?[unknown]
+
+#resign if no left over moves
+boardsize 2
+clear_board
+play b a1
+play b a2
+play b b1
+genmove w
+#?[resign]
+
+#simple test of solve
+clear_board
+play b b1
+play w a1
+solve
+#?[b b2|b a2]
+
+#check genmove implements solver
+clear_board
+play b b1
+play w a1
+genmove b
+#?[b b2|b a2]
